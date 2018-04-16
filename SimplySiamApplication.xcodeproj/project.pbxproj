@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3F6A50DB202ED58300ED0E26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FCE40AD2022B01100D18843 /* Main.storyboard */; };
-		3F6A50DC202ED81700ED0E26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCE40B02022B01100D18843 /* Assets.xcassets */; };
 		3F6A50DE202EF3B800ED0E26 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A50DD202EF3B800ED0E26 /* CartViewController.swift */; };
 		3F6A50E0202F9AC700ED0E26 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A50DF202F9AC700ED0E26 /* ProfileViewController.swift */; };
 		3F6A50E2202F9AF200ED0E26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F6A50E1202F9AF200ED0E26 /* HomeViewController.swift */; };
@@ -26,6 +25,7 @@
 		3FCE40CE2022DAEE00D18843 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCE40CD2022DAEE00D18843 /* CartTableViewCell.swift */; };
 		3FCFC7CEB124C682E3275839 /* Pods_SimplySiamApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F107B5C91F26793DB6AAD2 /* Pods_SimplySiamApplication.framework */; };
 		3FE214C22026722F002E9B6A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE214C12026722F002E9B6A /* DatabaseManager.swift */; };
+		DF2AE7E02084599D000F48E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF2AE7DF2084599D000F48E9 /* Assets.xcassets */; };
 		DFDCFBF42075B95B00FACCDA /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCFBF32075B95B00FACCDA /* FeedbackViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +37,6 @@
 		3FCE40A42022B01100D18843 /* SimplySiamApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimplySiamApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCE40A72022B01100D18843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FCE40AE2022B01100D18843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3FCE40B02022B01100D18843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FCE40B32022B01100D18843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FCE40B52022B01100D18843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FCE40BB2022B23100D18843 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		65F107B5C91F26793DB6AAD2 /* Pods_SimplySiamApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimplySiamApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6678B9D3428D8A5FC92C760 /* Pods-SimplySiamApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplySiamApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimplySiamApplication/Pods-SimplySiamApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		D24559B3C71D2129F9B360E6 /* Pods-SimplySiamApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplySiamApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimplySiamApplication/Pods-SimplySiamApplication.release.xcconfig"; sourceTree = "<group>"; };
+		DF2AE7DF2084599D000F48E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		DFDCFBF32075B95B00FACCDA /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,11 +108,11 @@
 				3FCE40CB2022CEA000D18843 /* CartTableViewController.swift */,
 				3FCE40CD2022DAEE00D18843 /* CartTableViewCell.swift */,
 				DFDCFBF32075B95B00FACCDA /* FeedbackViewController.swift */,
+				DF2AE7DF2084599D000F48E9 /* Assets.xcassets */,
 				3FCE40C72022CBD000D18843 /* CheckoutViewController.swift */,
 				3F6A50DF202F9AC700ED0E26 /* ProfileViewController.swift */,
 				3F6A50E1202F9AF200ED0E26 /* HomeViewController.swift */,
 				3FCE40AD2022B01100D18843 /* Main.storyboard */,
-				3FCE40B02022B01100D18843 /* Assets.xcassets */,
 				3FCE40B22022B01100D18843 /* LaunchScreen.storyboard */,
 				3FCE40B52022B01100D18843 /* Info.plist */,
 				3FCE40BD2022B2CB00D18843 /* Data.swift */,
@@ -192,8 +192,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F6A50DC202ED81700ED0E26 /* Assets.xcassets in Resources */,
 				3FCE40B42022B01100D18843 /* LaunchScreen.storyboard in Resources */,
+				DF2AE7E02084599D000F48E9 /* Assets.xcassets in Resources */,
 				3F6A50DB202ED58300ED0E26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
