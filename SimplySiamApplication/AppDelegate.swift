@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,
+GIDSignInDelegate {
 
     var window: UIWindow?
 
@@ -18,9 +21,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
         self.window?.rootViewController = loginVC
+        ///////////////////
+        FirebaseApp.configure()
+        
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
     }
 
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let err = error {
+            print("Failed to log into Google: ", err)
+            return
+        }
+        
+        print("Successfully logged into Google", user)
+        
+        guard let idToken = user.authentication.idToken else { return }
+        guard let accessToken = user.authentication.accessToken else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+        
+        Auth.auth().signIn(with: credentials, completion: { (user, error) in
+            if let err = error {
+                print("Failed to create a Firebase User with Google account: ", err)
+                return
+            }
+            
+            guard let uid = user?.uid else {
+                return
+            }
+            let user = Auth.auth().currentUser
+            if let user = user {
+                _ = user.uid
+                let email = user.email
+                let name = user.displayName
+                print(email! + " " + name!)
+                loggedUserName = name! as! String
+                loggedUserEmail = email! as! String
+                isUserLoggedIn = true
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let menuItemTabbarVC = storyboard.instantiateViewController(withIdentifier: "menuItemTabbarVC") as! UITabBarController
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController = menuItemTabbarVC
+            }
+        })
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -42,7 +90,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

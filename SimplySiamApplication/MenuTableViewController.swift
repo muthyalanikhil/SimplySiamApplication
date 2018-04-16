@@ -45,10 +45,8 @@ class MenuTableViewController: UITableViewController, UISearchResultsUpdating  {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        for a in filteredMenu!{
-            
-        }
         return filteredMenu!.count
+        //return 4
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
