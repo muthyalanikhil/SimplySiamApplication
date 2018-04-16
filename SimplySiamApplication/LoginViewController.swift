@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
-class LoginViewController: UIViewController,UITextFieldDelegate {
+class LoginViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDelegate {
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -63,6 +65,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         self.username.delegate = self
         self.password.delegate = self
+        setupGoogleButtons()
         // Do any additional setup after loading the view.
     }
 
@@ -74,6 +77,20 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    fileprivate func setupGoogleButtons() {
+        //add google sign in button
+        let googleButton = GIDSignInButton()
+        googleButton.frame = CGRect(x: 16, y: 500, width: view.frame.width - 32, height: 50)
+        view.addSubview(googleButton)
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+    
+    @objc func handleCustomGoogleSign() {
+        GIDSignIn.sharedInstance().signIn()
+        
     }
 
     /*

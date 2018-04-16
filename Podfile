@@ -8,4 +8,7 @@ target 'SimplySiamApplication' do
   # Pods for SimplySiamApplication
 
 pod 'Backendless'
+pod 'Firebase/Auth'
+pod 'GoogleSignIn'
+
 end

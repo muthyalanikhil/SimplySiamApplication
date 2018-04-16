@@ -27,6 +27,7 @@
 		3FE214C22026722F002E9B6A /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE214C12026722F002E9B6A /* DatabaseManager.swift */; };
 		DF2AE7E02084599D000F48E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF2AE7DF2084599D000F48E9 /* Assets.xcassets */; };
 		DFDCFBF42075B95B00FACCDA /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDCFBF32075B95B00FACCDA /* FeedbackViewController.swift */; };
+		DFE66CCD20855D82000AFC73 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DFE66CCC20855D82000AFC73 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		D24559B3C71D2129F9B360E6 /* Pods-SimplySiamApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimplySiamApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimplySiamApplication/Pods-SimplySiamApplication.release.xcconfig"; sourceTree = "<group>"; };
 		DF2AE7DF2084599D000F48E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		DFDCFBF32075B95B00FACCDA /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		DFE66CCC20855D82000AFC73 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		3FCE40A62022B01100D18843 /* SimplySiamApplication */ = {
 			isa = PBXGroup;
 			children = (
+				DFE66CCC20855D82000AFC73 /* GoogleService-Info.plist */,
 				3FCE40A72022B01100D18843 /* AppDelegate.swift */,
 				3FCE40C32022CB8B00D18843 /* LoginViewController.swift */,
 				3FCE40C52022CBB000D18843 /* SignUpViewController.swift */,
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FCE40B42022B01100D18843 /* LaunchScreen.storyboard in Resources */,
+				DFE66CCD20855D82000AFC73 /* GoogleService-Info.plist in Resources */,
 				DF2AE7E02084599D000F48E9 /* Assets.xcassets in Resources */,
 				3F6A50DB202ED58300ED0E26 /* Main.storyboard in Resources */,
 			);
@@ -207,9 +211,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimplySiamApplication/Pods-SimplySiamApplication-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -222,9 +229,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimplySiamApplication/Pods-SimplySiamApplication-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -413,7 +429,7 @@
 				DEVELOPMENT_TEAM = 4C64W48T4Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SimplySiamApplication/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SimplySiam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -432,7 +448,7 @@
 				DEVELOPMENT_TEAM = 4C64W48T4Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = SimplySiamApplication/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SimplySiam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
