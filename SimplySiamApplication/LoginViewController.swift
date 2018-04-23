@@ -90,7 +90,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate,GIDSignInUIDeleg
     
     @objc func handleCustomGoogleSign() {
         GIDSignIn.sharedInstance().signIn()
-        
     }
 
     /*

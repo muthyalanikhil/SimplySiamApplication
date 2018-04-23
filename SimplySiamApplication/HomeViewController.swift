@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import Firebase
+import GoogleSignIn
 
 class HomeViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
 
@@ -32,6 +34,14 @@ class HomeViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDe
         loggedUserState = ""
         loggedUserZip = ""
         isUserLoggedIn = false
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            GIDSignIn.sharedInstance().signOut()
+            print("log out")
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! UIViewController
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
